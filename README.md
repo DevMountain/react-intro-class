@@ -580,6 +580,20 @@ In this step will be adding a `setOperator` method that will handle setting our 
 
 ### Solution
 
+<details>
+
+<summary> setOperator method <code> </code> </summary>
+
+```jsx
+setOperator(operator) {
+  if ( !this.state.operator ) {
+    this.setState({ operator: operator, temp: parseInt(this.state.display, 10), display: '0' });
+  }
+}
+```
+
+</details>
+
 <img src="https://github.com/DevMountain/react-intro-online/blob/solution/readme/2g.gif" />
 
 ## Step 8
