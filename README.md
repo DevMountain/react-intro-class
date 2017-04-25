@@ -44,8 +44,6 @@ export default App;
 
 </details>
 
-<br />
-
 <details>
 
 <summary> <code> App.css </code> </summary>
@@ -212,9 +210,11 @@ In this step we will create our `Calculator` component that will render in our c
 
 ### Instructions
 
-Create a basic react component, `Calculator`, in `app/src/components/Calculator/Calculator.js`. Also import the calculator img from the root directory.
-
-To save time, paste the following JSX into the the `return` of the `render` method. This is the JSX that will create our calculator.
+* Create a basic react component called `Calculator` in `app/src/components/Calculator/Calculator.js`
+* Import the calculator img from the root directory
+* Paste the following JSX into the `return` of the `render` method
+* Export the calculator component
+* Import the calculator component in `App.js`
 
 <details>
 
