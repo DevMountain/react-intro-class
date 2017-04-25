@@ -343,99 +343,15 @@ export default App;
 
 ### Summary
 
-In this step we'll make our calculator header editable by the user using state and an `onChange` event.
+In this step we'll make our calculator header editable by the user using state and an `onChange` event in `Calculator.js`.
 
 ### Instructions
 
-We'll start by creating a `constructor` method above the `render` method in `Calculator.js`. 
-
-<details>
-
-<summary> <code> Calculator.js </code> </summary>
-
-```jsx
-import React, { Component } from 'react';
-import calculatorImg from '../../../../calculator.png';
-
-class Calculator extends Component {
-  constructor() {
-
-  }
-
-  render() {
-    return (
-      <div id="calculator-container">
-        <input id="header-input"></input>
-        <h1 id="header"> Calculator </h1>
-        <img className="remove-highlight" src={calculatorImg} alt="calculator" />
-        <div id="calculator-mask" className="remove-highlight">
-          <div className="output">
-            <span className="total"></span>
-          </div>
-
-          <div className="btn clear"></div>
-
-          <div className="btn zero"></div>
-          <div className="btn one"></div>
-          <div className="btn two"></div>
-          <div className="btn three"></div>
-          <div className="btn four"></div>
-          <div className="btn five"></div>
-          <div className="btn six"></div>
-          <div className="btn seven"></div>
-          <div className="btn eight"></div>
-          <div className="btn nine"></div>
-
-          <div className="btn equal"></div>
-          <div className="btn multiply"></div>
-          <div className="btn divide"></div>
-          <div className="btn subtract"></div>
-          <div className="btn add"></div>
-        </div>
-      </div>
-    )
-  }
-}
-
-export default Calculator;
-```
-
-</details>
-
-<br />
-
-Create a header property on state.
-
-```jsx
-constructor() {
-  super();
-  this.state = {
-    header: 'Calculator'
-  }
-}
-```
-
-Add an `onChange` attribute to our `input` element with the `id` of `header-input` and have it call an arrow function that captures the event and passes it to a method on our class we'll call `updateHeader`.
-
-```jsx
-updateHeader(val) {
-
-}
-```
-
-```jsx
-<input id="header-input" onChange={ (e) => { this.updateHeader(e.target.value); }}></input>
-```
-
-Use `val` in the `updateHeader` method to update the `header` propertt on `state`.
-
-```jsx
-updateHeader(val) {
-  this.setState({ header: val });
-}
-```
-
-Finally change the `<h1>` element's value with the `id` of `header` to `{ this.state.header }`. 
+* Create a constructor method 
+* Create a state object that has a `header` property
+* Create a method called `updateHeader` that takes `val` as a parameter
+* Add an `onChange` event to `#header-input` element that calls `updateHeader` with the value of the element
+* Change the value of the `#header` element to the header property on state
 
 ### Solution
 
