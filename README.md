@@ -20,7 +20,8 @@ In this step we will modify the first component `create-react-app` makes for us.
 
 ### Instructions
 
-Clear out the `return` statement in the `render` method.
+* Clear out the `return` statement in the `render` method
+* Clear out `App.css` and paste in the solution
 
 <details>
 
@@ -44,8 +45,6 @@ export default App;
 </details>
 
 <br />
-
-Clear out `App.css` and paste in the following styles:
 
 <details>
 
@@ -520,7 +519,7 @@ import React, { Component } from 'react';
 import calculatorImg from '../../../../calculator.png';
 
 class Calculator extends Component {
-  constructor(props) {
+  constructor() {
     super();
     this.state = {
       display: '0',
