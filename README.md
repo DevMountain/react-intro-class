@@ -582,7 +582,7 @@ In this step will be adding a `setOperator` method that will handle setting our 
 
 <details>
 
-<summary> setOperator method <code> </code> </summary>
+<summary> <code> setOperator method </code> </summary>
 
 ```jsx
 setOperator(operator) {
@@ -593,6 +593,8 @@ setOperator(operator) {
 ```
 
 </details>
+
+<br />
 
 <img src="https://github.com/DevMountain/react-intro-online/blob/solution/readme/2g.gif" />
 
