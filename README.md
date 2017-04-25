@@ -573,49 +573,10 @@ In this step will be adding a `setOperator` method that will handle setting our 
 
 ### Instructions
 
-There are a couple things to consider on this step. When a user types in their first number and then presses an operator we need to do four things.
-
-1. Save which operator the user chooses
-2. Only allow for the operator to be selected once
-3. Save the first number the user inputted
-4. Clear the display for the second number
-
-We can do all of these things using one `this.setState({})` with the following properties: `display`, `operator`, and `temp`.
-
-If we take a look in our `Calculator.js` we'll see we have four elements with classes of `multiply`, `divide`, `subtract`, and `add`. Using an `onClick={}` we can call a method called `setOperator` that takes an operator as an arugment.
-
-```jsx
-setOperator(operator) {
-
-}
-```
-
-```jsx
-<div className="btn multiply" onClick={ () => { this.setOperator('*'); } }></div>
-<div className="btn divide"   onClick={ () => { this.setOperator('/'); } }></div>
-<div className="btn subtract" onClick={ () => { this.setOperator('-'); } }></div>
-<div className="btn add"      onClick={ () => { this.setOperator('+'); } }></div>
-```
-
-If one of our requirements is to set the operator only one time, we can use an if statement to check to see if it has already been set on state.
-
-```jsx
-setOperator(operator) {
-  if (!this.state.operator) {
-
-  }
-}
-```
-
-Since we are getting the operator as a parameter we can just use setState to set the operator, reset the display, and save the current number.
-
-```jsx
-setOperator(operator) {
-  if (!this.state.operator) {
-    this.setState({ operator: operator, temp: parseInt(this.state.display, 10), display: '0' })
-  }
-}
-```
+* Create a method called `setOperator` that takes an `operator` parameter
+* Create update the operator `div` elemetns to call the `setOperator` method with the correct operator
+* Only run code in the `setOperator` method if the operator has not been set before
+* Update the operator, temp, and display properties on state in the `setOperator` method
 
 ### Solution
 
