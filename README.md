@@ -574,7 +574,7 @@ In this step will be adding a `setOperator` method that will handle setting our 
 ### Instructions
 
 * Create a method called `setOperator` that takes an `operator` parameter
-* Create update the operator `div` elemetns to call the `setOperator` method with the correct operator
+* Update the operator `div` elements to call the `setOperator` method with the correct operator
 * Only run code in the `setOperator` method if the operator has not been set before
 * Update the operator, temp, and display properties on state in the `setOperator` method
 
@@ -607,7 +607,7 @@ In this step we will be adding a calculate method that will preform the user sel
 ### Instructions
 
 * Create a `calculate` method
-* Update the `.btn equal` method to call the `calculate` method
+* Update the `.btn equal` element to call the `calculate` method
 * Only run code in the `calculate` method if the operator has been set before
 * Create a variable called `result` 
 * Switch the operator on state, preform the correct math operation, and update the value of `result`
