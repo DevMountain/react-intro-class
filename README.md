@@ -544,24 +544,15 @@ In this step we will be tweaking our calculator to handle certain scenarios. If 
 
 ### Instructions
 
-#### Exclude initial 0
+* Create a variable called `display` inside the `setDisplay` method
+* Set display to either the passed in `num` or the current display + `num`
+* Modify `this.setState` to update display with the new `display` variable or the current display 
 
-In order to remove the first 0 we can check to see if the display is currently '0'. Otherwise if it is not '0' do string concatenation.
+### Solution
 
-##### Solution
+<details>
 
-```jsx
-setDisplay(num) {
-  var display = ( this.state.display === '0' ) ? num : this.state.display + num;
-  this.setState({ display: display });
-}
-```
-
-#### Keep length contained in output field
-
-With the current size of the output field you can fit about 13 characters before breaking outside the border. Therefore, we can check to see if the length of display is less than 13 characters before updating state.
-
-##### Solution
+<summary> <code> setDisplay method </code> </summary>
 
 ```jsx
 setDisplay(num) {
@@ -569,6 +560,8 @@ setDisplay(num) {
   this.setState({ display: (this.state.display.length < 13) ? display : this.state.display })
 }
 ```
+
+</details>
 
 ### Solution
 
