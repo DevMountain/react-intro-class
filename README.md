@@ -424,11 +424,16 @@ You should now be able to click on the header and type in a new value for it.
 
 ### Summary
 
-In this step we are going to start working on the functionality of our calculator. We'll start by assigning variables to state which we will need to keep track of information during run time. 
+In this step we will assign variables to state which we will need to keep track of information during run time. 
 
 ### Instructions
 
-Just above the render function in `Calculator.js` let's add a method called constructor and let's define in our state: `display: '0'`, `operator: ''`, `temp: 0`, and `resetDisplay: false`. Notice how display is a string and temp is an integer.
+* Add `display` to state with an initial value of `'0'`
+* Add `operator` to state with an initial value of `''`
+* Add `temp` to state with an initial value of `0`
+* Add `resetDisplay` to state with an initial value of `false`
+
+Notice how display is a string and temp is an integer.
 
 #### Solution
 ```jsx
