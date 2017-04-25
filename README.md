@@ -436,8 +436,13 @@ In this step we will assign variables to state which we will need to keep track 
 Notice how display is a string and temp is an integer.
 
 #### Solution
+
+<details>
+
+<summary> <code> Constructor Function </code> </summary>
+
 ```jsx
-constructor(props) {
+constructor() {
   super();
   this.state = {
     header: 'Calculator',
@@ -448,6 +453,8 @@ constructor(props) {
   }
 }
 ```
+
+</details>
 
 ## Step 5
 
