@@ -213,26 +213,7 @@ In this step we will create our `Calculator` component that will render in our c
 
 ### Instructions
 
-In the `src` directory create a folder called components and add another folder inside called `Calculator`. Inside of the `Calculator` folder create a file called `Calculator.js` and open it.
-
-When creating new components we have to import `React` and `{ Component }` from react. We will also need to import our `calculator.png` file from the root directory. 
-
-```js
-import React, { Component } from 'react';
-import calculatorImg from '../../../../calculator.png';
-```
-
-We can then create a `Calculator` class that extends on `Component` that has a `render` method.
-
-```js
-class Calculator extends Component {
-  render() {
-    return (
-
-    )
-  }
-}
-```
+Create a basic react component, `Calculator`, in `app/src/components/Calculator/Calculator.js`. Also import the calculator img from the root directory.
 
 To save time, paste the following JSX into the the `return` of the `render` method. This is the JSX that will create our calculator.
 
