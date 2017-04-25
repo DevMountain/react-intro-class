@@ -254,10 +254,6 @@ In this step we will create our `Calculator` component that will render in our c
 
 </details>
 
-<br />
-
-Export `Calculator` so that `App.js` can import it. After exporting `Calculator` go into `App.js` and import it. We can then add `Calculator` to the `render` of `App.js`.
-
 ### Solution
 
 <details>
@@ -463,50 +459,9 @@ In this step we will create a method called `setDisplay()` that will allow us to
 
 ### Instructions
 
-To start, let's take a look at our `div` element with the className of output. Inside that `div` we have a `span` with the `className` of total. This element sits in the output section of our calculator.
-
-Inside the span tags let's `render` our display property on state by using `{ this.state.display }`.
-
-````jsx
-<div className="output">
-  <span className="total"> { this.state.display } </span>
-</div>
-````
-
-Now we can create our method that will update our state property `display`. Let's add our new method above the render method on our class. In react in order to trigger a method on a click event we use the attribute called `onClick={}`. Let's take a look at our `div` with the className of `btn one`.
-
-```jsx
-<div className="btn one"></div>
-```
-
-We'll want to call our `setDisplay` method with a parameter so it knows which button was clicked.
-
-```jsx
-<div className="btn one" onClick={ () => { this.setDisplay('#'); } }></div>
-```
-
-Let's copy and paste `onClick={ () => { this.setDisplay('#'); } }` over to each number button and be sure to replace # with the number of the button. You can determine which `div` is which number based on its className.
-
-```jsx
-<div className="btn zero"   onClick={ () => { this.setDisplay('0'); } }></div>
-<div className="btn one"    onClick={ () => { this.setDisplay('1'); } }></div>
-<div className="btn two"    onClick={ () => { this.setDisplay('2'); } }></div>
-<div className="btn three"  onClick={ () => { this.setDisplay('3'); } }></div>
-<div className="btn four"   onClick={ () => { this.setDisplay('4'); } }></div>
-<div className="btn five"   onClick={ () => { this.setDisplay('5'); } }></div>
-<div className="btn six"    onClick={ () => { this.setDisplay('6'); } }></div>
-<div className="btn seven"  onClick={ () => { this.setDisplay('7'); } }></div>
-<div className="btn eight"  onClick={ () => { this.setDisplay('8'); } }></div>
-<div className="btn nine"   onClick={ () => { this.setDisplay('9'); } }></div>
-```
-
-Since we are getting the number passed in as a parameter we can use the parameter to update `this.state.display`.
-
-```jsx
-setDisplay(num) {
-  this.setState({ display: this.state.display + num });
-}
-```
+* Change the value of the `.total` element to the display property on state
+* Create a `setDisplay` method that takes a `num` parameter and updates the value of the display property on state
+* Update the `.btn #` elements to call the `setDisplay` method with the correct number in string format
 
 ### Solution
 
@@ -522,11 +477,16 @@ class Calculator extends Component {
   constructor() {
     super();
     this.state = {
+      header: 'Calculator',
       display: '0',
       operator: '',
       temp: 0,
       resetDisplay: false,
     }
+  }
+
+  updateHeader(val) {
+    this.setState({ header: val });
   }
 
   setDisplay(num) {
@@ -536,6 +496,8 @@ class Calculator extends Component {
   render() {
     return (
       <div id="calculator-container">
+        <input id="header-input" onChange={ (e) => { this.updateHeader(e.target.value); }}></input>
+        <h1 id="header"> {this.state.header} </h1>
         <img className="remove-highlight" src={calculatorImg} alt="calculator" />
         <div id="calculator-mask" className="remove-highlight">
 
