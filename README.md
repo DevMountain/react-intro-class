@@ -606,60 +606,17 @@ In this step we will be adding a calculate method that will preform the user sel
 
 ### Instructions
 
-To start let's take a look at our `Calculator.js` and find the element that corresponds to the equal button.
+* Create a `calculate` method
+* Only run code in the `calculate` method if the operator has been set before
+* Create a variable called `result` 
+* Switch the operator on state, preform the correct math operation, and update the value of `result`
+* Update the display property on state with `result`
 
-```jsx
-<div className="btn equal"></div>
-```
+### Solution
 
-Since all the values we need are already being stored on state, we do not need to call this function with any parameters.
+<details>
 
-```jsx
-calculate() {
-
-}
-```
-
-```jsx
-<div className="btn equal" onClick={ () => { this.calculate() } }></div>
-```
-
-There are some scenarios to consider when creating this method. For example, how do we know when we press the equal button that the user has already selected an operator? Well, if we look at our code base when we select an operator we update the operator and temp properties. We can use these as a source of truth for determining if we should preform a math operation.
-
-Therefore, we can code an if statement that checks to see if operator is `''`, and if it is, exit the function.
-
-```jsx
-calculate() {
-  if ( this.state.operator === '' ) { return; }
-}
-```
-
-Let's add a switch statement for `this.state.operator` ( '+', '-', '*', '/' )
-
-```jsx
-calculate() {
-  if ( this.state.temp === 0 ) { return; }
-
-  switch ( this.state.operator ) {
-    case '+':
-
-      break;
-    case '-':
-
-      break;
-    case '*':
-
-      break;
-    case '/':
-
-      break;
-    default:
-      break;
-  }
-}
-```
-
-Let's create a variable called result and update its value and use one `this.setState({})` after the switch statement has completed. Our variable result should be equal to the `this.state.temp` value ( +, -, *, / ) the current `this.state.display` value.
+<summary> <code> calculate method </code> </summary>
 
 ```jsx
 calculate() {
@@ -687,7 +644,9 @@ calculate() {
 }
 ```
 
-### Solution
+</details>
+
+<br />
 
 <img src="https://github.com/DevMountain/react-intro-online/blob/solution/readme/3g.gif" />
 
