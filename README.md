@@ -607,6 +607,7 @@ In this step we will be adding a calculate method that will preform the user sel
 ### Instructions
 
 * Create a `calculate` method
+* Update the `.btn equal` method to call the `calculate` method
 * Only run code in the `calculate` method if the operator has been set before
 * Create a variable called `result` 
 * Switch the operator on state, preform the correct math operation, and update the value of `result`
@@ -658,19 +659,15 @@ In this step we will be making the clear button work.
 
 ### Instructions
 
-In our `Calculator.js` find the element with the `clear` class and let's add an `onClick={}` attribute to call a `clearDisplay` method.
+* Create a `clearDisplay` method
+* Update the `.btn clear` element to call the `clearDisplay` method
+* Reset the properties on state to their default values
 
-```jsx
-clearDisplay() {
+### Solution
 
-}
-```
+<details>
 
-```jsx
-<div className="btn clear" onClick={ () => { this.clearDisplay() } }></div>
-```
-
-When we clear the display we also want to reset the calculator no matter what state it is in.
+<summary> <code> clearDisplay method </code> </summary>
 
 ```jsx
 clearDisplay() {
@@ -678,11 +675,11 @@ clearDisplay() {
 }
 ```
 
-### Solution
+</details>
 
-<p align="center">
+<br />
+
 <img src="https://github.com/DevMountain/react-intro-online/blob/solution/readme/4g.gif" />
-</p>
 
 ## Black Diamond
 
