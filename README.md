@@ -8,9 +8,11 @@ In this project we will use an npm package called `create-react-app` to quickly 
 
 ## Setup
 
+* `Fork` and `clone` this repository and then `cd` into it.
 * Run `npm install` in root directory
-* Run `sudo npm install -g create-react-app`
-* Run `create-react-app app`
+* If you don't have create-react-app installed do so by running `sudo npm install -g create-react-app`
+* Run `create-react-app app` -> This will make a folder for you called app
+* Open the newly created `app` folder in your editor, it's time to code!
 
 ## Step 1
 
@@ -20,8 +22,9 @@ In this step we will modify the first component `create-react-app` makes for us.
 
 ### Instructions
 
-* Clear out the `return` statement in the `render` method
-* Clear out `App.css` and paste in the solution
+* Open `src/App.js`
+* Delete all content in the `return` statement in the `render` method
+* Remove all content from `App.css` and paste in the solution (found below)
 
 <details>
 
@@ -210,19 +213,24 @@ In this step we will create our `Calculator` component that will render in our c
 
 ### Instructions
 
+* Create a folder called `Calculator` inside of component
+* Create a file called `Caclulator.js` inside of the `Calculator` folder
 * Create a basic react component called `Calculator` in `app/src/components/Calculator/Calculator.js`
-* Import the calculator img from the root directory
-* Paste the following JSX into the `return` of the `render` method
-* Export the calculator component
+* Import the calculator img from the root directory (hint: `import varName from "picturepath.png"`)
+  * Call your variable `calculatorImg`
+* Paste the following `JSX` layout inside the render method of the `Calculator` component
+* Export default the calculator component 
 * Import the calculator component in `App.js`
+* Add the calculator in the render of `App.js` 
+* Once you finish these steps run `npm start` (from the app folder) on the command line and you should see your calculator rendered on the screen.
 
 <details>
 
 <summary> <code> JSX </code> </summary>
 
 ```js
-<div id="calculator-container">
-  <input id="header-input"></input>
+ return (<div id="calculator-container">
+  <input id="header-input"/>
   <h1 id="header"> Calculator </h1>
   <img className="remove-highlight" src={calculatorImg} alt="calculator" />
   <div id="calculator-mask" className="remove-highlight">
@@ -250,6 +258,7 @@ In this step we will create our `Calculator` component that will render in our c
     <div className="btn add"></div>
   </div>
 </div>
+ )
 ```
 
 </details>
@@ -268,7 +277,7 @@ class Calculator extends Component {
   render() {
     return (
       <div id="calculator-container">
-        <input id="header-input"></input>
+        <input id="header-input"/>
         <h1 id="header"> Calculator </h1>
         <img className="remove-highlight" src={calculatorImg} alt="calculator" />
         <div id="calculator-mask" className="remove-highlight">
@@ -340,13 +349,23 @@ export default App;
 
 In this step we'll make our calculator header editable by the user using state and an `onChange` event in `Calculator.js`.
 
+Our header has two pieces : The visible text and an invisible input box.  We're going to wire up the header so that 
+when we click on it we can type in the invisible input box and the text part will update.
+
+VOCAB : class method = A class method is a method on a class.  It is a sibling to the constructor function.
+
 ### Instructions
 
+* Go back to `Calculator.js`
 * Create a constructor method 
-* Create a state object that has a `header` property
-* Create a method called `updateHeader` that takes `val` as a parameter
-* Add an `onChange` event to `#header-input` element that calls `updateHeader` with the value of the element
-* Change the value of the `#header` element to the header property on state
+  * Inside the contructor function invoke the `super()` method
+  * After `super()`, create a state object that has a `header` property, give it a default value of `"Calculator"`
+* Create a class method called `updateHeader` that takes `val` as a parameter
+  * This method should set the `header` property to `val` on state (hint: `this.setState({...})`)
+* Add an `onChange` event to `#header-input` and make its value be an arrow function that receives a parameter `e`.  This parameter represents the changeEvent object.
+  * Inside the arrow function, call the `updateHeader` method and pass in the value from the event `e.target.value`
+* Inside the h1 tag `#header` change `Calculator` to the value of the `header` property on state (hint: `{this.state.xyz}`)
+* TEST : In your app click on the header and start typing.  
 
 ### Solution
 
@@ -373,7 +392,7 @@ class Calculator extends Component {
   render() {
     return (
       <div id="calculator-container">
-        <input id="header-input" onChange={ (e) => { this.updateHeader(e.target.value); }}></input>
+        <input id="header-input" onChange={ (e) => { this.updateHeader(e.target.value); }}/>
         <h1 id="header"> {this.state.header} </h1>
         <img className="remove-highlight" src={calculatorImg} alt="calculator" />
         <div id="calculator-mask" className="remove-highlight">
@@ -421,8 +440,11 @@ You should now be able to click on the header and type in a new value for it.
 
 In this step we will assign variables to state which we will need to keep track of information during run time. 
 
+VOCAB: Run-time means the state of the code while the application is running, not while we're writing it.
+
 ### Instructions
 
+* Open `Calculator.js`
 * Add `display` to state with an initial value of `'0'`
 * Add `operator` to state with an initial value of `''`
 * Add `temp` to state with an initial value of `0`
@@ -459,9 +481,10 @@ In this step we will create a method called `setDisplay()` that will allow us to
 
 ### Instructions
 
-* Change the value of the `.total` element to the display property on state
-* Create a `setDisplay` method that takes a `num` parameter and updates the value of the display property on state
-* Update the `.btn #` elements to call the `setDisplay` method with the correct number in string format
+* In `Calculator.js`
+* Change the value of the `.total` element to the `display` property on state
+* Create a `setDisplay` class method that takes a `num` parameter and updates the value of the `display` property on state with that parameter
+* Update buttons zero through nine to call the `setDisplay` method with the correct number in <b>string</b> format. You can tell which button is which number by its `class`
 
 ### Solution
 
@@ -496,7 +519,7 @@ class Calculator extends Component {
   render() {
     return (
       <div id="calculator-container">
-        <input id="header-input" onChange={ (e) => { this.updateHeader(e.target.value); }}></input>
+        <input id="header-input" onChange={ (e) => { this.updateHeader(e.target.value); }}/>
         <h1 id="header"> {this.state.header} </h1>
         <img className="remove-highlight" src={calculatorImg} alt="calculator" />
         <div id="calculator-mask" className="remove-highlight">
@@ -543,8 +566,12 @@ In this step we will be tweaking our calculator to handle certain scenarios. If 
 ### Instructions
 
 * Create a variable called `display` inside the `setDisplay` method
-* Set display to either the passed in `num` or the current display + `num`
-* Modify `this.setState` to update display with the new `display` variable or the current display 
+* Assign the `display` variable a value:
+  * If `this.state.display` is `"0"` then `display` = `num` 
+  * Otherwise `display` = `this.state.display` + `num`
+* Modify `this.setState` to update display:
+  * If `this.state.display` is less than 13 characters: update with the new `display` variable 
+  * Otherwise update with the current value of `this.state.display`
 
 ### Solution
 
@@ -574,9 +601,12 @@ In this step will be adding a `setOperator` method that will handle setting our 
 ### Instructions
 
 * Create a method called `setOperator` that takes an `operator` parameter
-* Update the operator `div` elements to call the `setOperator` method with the correct operator
+* Update the operator `div` elements to call the `setOperator` method with the correct operator. You can tell which `div` elements are operators by their class name.
 * Only run code in the `setOperator` method if the operator has not been set before
-* Update the operator, temp, and display properties on state in the `setOperator` method
+* Update the `operator`, `temp`, and `display` properties on state in the `setOperator` method
+  * `temp` = previous display value parsed to an integer
+  * `display` = "0"
+  * `operator` = string value of operator button that was clicked ( `"+"`, `"-"`, `"/"`, `"*"` )
 
 ### Solution
 
@@ -585,11 +615,18 @@ In this step will be adding a `setOperator` method that will handle setting our 
 <summary> <code> setOperator method </code> </summary>
 
 ```jsx
+// setOperator Method
 setOperator(operator) {
   if ( !this.state.operator ) {
     this.setState({ operator: operator, temp: parseInt(this.state.display, 10), display: '0' });
   }
 }
+
+// JSX in return of Calculator.js
+<div className="btn multiply" onClick={ () => { this.setOperator('*'); } }></div>
+<div className="btn divide"   onClick={ () => { this.setOperator('/'); } }></div>
+<div className="btn subtract" onClick={ () => { this.setOperator('-'); } }></div>
+<div className="btn add"      onClick={ () => { this.setOperator('+'); } }></div>
 ```
 
 </details>
@@ -610,7 +647,7 @@ In this step we will be adding a calculate method that will preform the user sel
 * Update the `.btn equal` element to call the `calculate` method
 * Only run code in the `calculate` method if the operator has been set before
 * Create a variable called `result` 
-* Switch the operator on state, preform the correct math operation, and update the value of `result`
+* Switch the operator on state, perform the correct math operation, and update the value of `result`
 * Update the display property on state with `result`
 
 ### Solution
@@ -621,7 +658,7 @@ In this step we will be adding a calculate method that will preform the user sel
 
 ```jsx
 calculate() {
-  if ( this.state.temp === 0 ) { return; }
+  if ( this.state.operator === '' ) { return; }
   var result;
 
   switch ( this.state.operator ) {
