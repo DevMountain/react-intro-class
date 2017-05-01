@@ -8,7 +8,7 @@ In this project we will use an npm package called `create-react-app` to quickly 
 
 ## Setup
 
-* Fork and clone this repository and then `cd` into it.
+* `Fork` and `clone` this repository and then `cd` into it.
 * Run `npm install` in root directory
 * If you don't have create-react-app installed do so by running `sudo npm install -g create-react-app`
 * Run `create-react-app app` -> This will make a folder for you called app
@@ -216,13 +216,13 @@ In this step we will create our `Calculator` component that will render in our c
 * Create a folder called `Calculator` inside of component
 * Create a file called `Caclulator.js` inside of the `Calculator` folder
 * Create a basic react component called `Calculator` in `app/src/components/Calculator/Calculator.js`
-* Import the calculator img from the root directory (hint: `import picPath from "picturepath.png"`)
+* Import the calculator img from the root directory (hint: `import varName from "picturepath.png"`)
   * Call your variable `calculatorImg`
-* Paste the following html layout inside the render method of the `Calculator` component
+* Paste the following `JSX` layout inside the render method of the `Calculator` component
 * Export default the calculator component 
 * Import the calculator component in `App.js`
 * Add the calculator in the render of `App.js` 
-* Once you finish this code run `npm start` (from the app folder) on the command line and you should see your calculator rendered on the screen.
+* Once you finish these steps run `npm start` (from the app folder) on the command line and you should see your calculator rendered on the screen.
 
 <details>
 
@@ -359,11 +359,11 @@ VOCAB : class method = A class method is a method on a class.  It is a sibling t
 * Go back to `Calculator.js`
 * Create a constructor method 
   * Inside the contructor function invoke the `super()` method
-  * After `super()`, Create a state object that has a `header` property, give it a default value of `Calculator`
+  * After `super()`, create a state object that has a `header` property, give it a default value of `"Calculator"`
 * Create a class method called `updateHeader` that takes `val` as a parameter
-  * This function should set that value to the `header` property on state (hint: `this.setState({...})`)
-* Add an `onChange` event to `#header-input` and make its value be an arrow function that receives a parameter `e`.  This parameter represents the changeEvent.
-  * inside the arrow function call the `updateHeader` method and pass in the value from the event `e.target.value`
+  * This method should set the `header` property to `val` on state (hint: `this.setState({...})`)
+* Add an `onChange` event to `#header-input` and make its value be an arrow function that receives a parameter `e`.  This parameter represents the changeEvent object.
+  * Inside the arrow function, call the `updateHeader` method and pass in the value from the event `e.target.value`
 * Inside the h1 tag `#header` change `Calculator` to the value of the `header` property on state (hint: `{this.state.xyz}`)
 * TEST : In your app click on the header and start typing.  
 
@@ -484,7 +484,7 @@ In this step we will create a method called `setDisplay()` that will allow us to
 * In `Calculator.js`
 * Change the value of the `.total` element to the `display` property on state
 * Create a `setDisplay` class method that takes a `num` parameter and updates the value of the `display` property on state with that parameter
-* Update buttons `zero through nine` to call the `setDisplay` method with the correct number in string format
+* Update buttons zero through nine to call the `setDisplay` method with the correct number in <b>string</b> format. You can tell which button is which number by its `class`
 
 ### Solution
 
@@ -566,11 +566,12 @@ In this step we will be tweaking our calculator to handle certain scenarios. If 
 ### Instructions
 
 * Create a variable called `display` inside the `setDisplay` method
-* update the `display` variable:
-  * If `state.display` is `0` then `display` = `num` 
-  * Otherwise `display` = `state.display` + `num`
-* Modify `this.setState` to update display with the new `display` variable or the current display 
-  * Only perform this update if the string is less that 13 characters.
+* Assign the `display` variable a value:
+  * If `this.state.display` is `"0"` then `display` = `num` 
+  * Otherwise `display` = `this.state.display` + `num`
+* Modify `this.setState` to update display:
+  * If `this.state.display` is less than 13 characters: update with the new `display` variable 
+  * Otherwise update with the current value of `this.state.display`
 
 ### Solution
 
@@ -600,12 +601,12 @@ In this step will be adding a `setOperator` method that will handle setting our 
 ### Instructions
 
 * Create a method called `setOperator` that takes an `operator` parameter
-* Update the operator `div` elements to call the `setOperator` method with the correct operator
+* Update the operator `div` elements to call the `setOperator` method with the correct operator. You can tell which `div` elements are operators by their class name.
 * Only run code in the `setOperator` method if the operator has not been set before
-* Update the operator, temp, and display properties on state in the `setOperator` method
-  * temp = previous display value parsed to an integer
-  * display = 0
-  * operator = string value of operator button that was clicked
+* Update the `operator`, `temp`, and `display` properties on state in the `setOperator` method
+  * `temp` = previous display value parsed to an integer
+  * `display` = "0"
+  * `operator` = string value of operator button that was clicked ( `"+"`, `"-"`, `"/"`, `"*"` )
 
 ### Solution
 
@@ -614,13 +615,18 @@ In this step will be adding a `setOperator` method that will handle setting our 
 <summary> <code> setOperator method </code> </summary>
 
 ```jsx
+// setOperator Method
 setOperator(operator) {
   if ( !this.state.operator ) {
     this.setState({ operator: operator, temp: parseInt(this.state.display, 10), display: '0' });
   }
-
-  //TODO JAMES : Add button clicks to this code solution
 }
+
+// JSX in return of Calculator.js
+<div className="btn multiply" onClick={ () => { this.setOperator('*'); } }></div>
+<div className="btn divide"   onClick={ () => { this.setOperator('/'); } }></div>
+<div className="btn subtract" onClick={ () => { this.setOperator('-'); } }></div>
+<div className="btn add"      onClick={ () => { this.setOperator('+'); } }></div>
 ```
 
 </details>
@@ -652,7 +658,7 @@ In this step we will be adding a calculate method that will preform the user sel
 
 ```jsx
 calculate() {
-  if ( this.state.temp === 0 ) { return; }
+  if ( this.state.operator === '' ) { return; }
   var result;
 
   switch ( this.state.operator ) {
