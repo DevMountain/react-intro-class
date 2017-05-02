@@ -223,7 +223,7 @@ In this step we will create our `Calculator` component that will render in our c
     
     <summary> <code> JSX Layout </code> </summary>
 
-    ```js
+    ```jsx
     return (
       <div id="calculator-container">
         <input id="header-input"/>
@@ -256,7 +256,7 @@ In this step we will create our `Calculator` component that will render in our c
       </div>
     )
     ```
-
+    
     </details>
 * Export default the calculator component at the bottom of `Calculator.js`.
 * Import the calculator component in `App.js`.
