@@ -9,7 +9,6 @@ In this project we will use an npm package called `create-react-app` to quickly 
 ## Setup
 
 * `Fork` and `clone` this repository and then `cd` into it.
-* Run `npm install` in the root directory.
 * If you don't have `create-react-app` installed, do so by running `sudo npm install -g create-react-app`.
 * Run `create-react-app app`in the root directory. ( This will create a folder called app )
 * Open the newly created `app` folder in your editor.
@@ -213,6 +212,7 @@ In this step we will create our `Calculator` component that will render in our c
 
 ### Instructions
 
+* Create a folder called 'components' inside of the 'src' folder
 * Create a folder called `Calculator` inside of the `components` folder. ( `app/src/components` )
 * Create a file called `Caclulator.js` inside of the `Calculator` folder you just created.
 * Create a basic react component called `Calculator` in the `Calculator.js` file you just created.
@@ -362,8 +362,8 @@ VOCAB : class method = A class method is a method on a class.  It is a sibling t
   * After `super()`, create a state object that has a `header` property and give it a default value of `"Calculator"`.
 * Create a class method called `updateHeader` that takes `val` as a parameter.
   * This method should set the `header` property on state to the value of `val`. ( hint: `this.setState({...})` )
-* Add an `onChange` event to `#header-input` element and make its value be an arrow function that receives a parameter `e`.  This parameter represents the changeEvent object.
-  * Inside the arrow function, call the `updateHeader` method and pass in the value from the event: `e.target.value`.
+* Add an `onChange` event to the input element with an id of `#header-input` and make its value be an arrow function that receives a parameter `e`. This parameter represents the changeEvent object.
+* Inside the arrow function, call the `updateHeader` method and pass in the value from the event: `e.target.value`.
 * Inside the h1 element `#header`, change `Calculator` to the value of the `header` property on state.  ( hint: `{this.state.xyz}` )
 * Test your header is working by clicking on it and typing in a new header. 
 
@@ -482,7 +482,7 @@ In this step we will create a method called `setDisplay()` that will allow us to
 ### Instructions
 
 * Open `Calculator.js`. ( `src/components/Calculator/Calculator.js` )
-* Change the value of the `.total` element to the value of the `display` property on state. ( hint: `{ this.state.abc }` )
+* Change the value of the span with the class of `.total` to the value of the `display` property on state. ( hint: `{ this.state.abc }` )
 * Create a `setDisplay` class method that takes a parameter called `num`. This method should then use `num` to update the value of `display` on state. 
 * Update buttons zero through nine to call the `setDisplay` method with the correct number in <b>string</b> format. You can tell which button is which number by its `class`.
 
