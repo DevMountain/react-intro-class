@@ -12,6 +12,7 @@ In this project we will use an npm package called `create-react-app` to quickly 
 * If you don't have `create-react-app` installed, do so by running `sudo npm install -g create-react-app`.
 * Run `create-react-app app`in the root directory. ( This will create a folder called app )
 * Open the newly created `app` folder in your editor.
+* Make sure to move the calculator.png image into the app/src folder to avoid any errors!
 
 ## Step 1
 
