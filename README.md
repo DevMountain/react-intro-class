@@ -212,7 +212,8 @@ In this step we will create our `Calculator` component that will render in our c
 
 ### Instructions
 
-* Create a folder called 'components' inside of the 'src' folder
+
+* Create a folder called `components` inside of the `src` folder. (`app/src`)
 * Create a folder called `Calculator` inside of the `components` folder. ( `app/src/components` )
 * Create a file called `Caclulator.js` inside of the `Calculator` folder you just created.
 * Create a basic react component called `Calculator` in the `Calculator.js` file you just created.
