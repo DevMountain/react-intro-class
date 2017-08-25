@@ -194,12 +194,7 @@ body {
 
 #header-input {
   width: 325px;
-  position: absolute;
   height: 33px;
-  background: transparent;
-  border: none;
-  color: transparent;
-  outline: none;
 }
 ```
 
