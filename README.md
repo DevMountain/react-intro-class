@@ -23,7 +23,6 @@ In this step we will modify the first component `create-react-app` makes for us.
 ### Instructions
 
 * Open `src/App.js`.
-* Delete all the content in the `return` statement in the `render` method.
 * Remove all content from `App.css` and paste in the solution. ( Found below ) 
 
 <details>
