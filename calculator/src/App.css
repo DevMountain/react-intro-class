@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50vh;
+}
+
+.remove-highlight {
+  user-select: none;
+}
+
+#calculator-container {
+  height: 325px;
+}
+
+#calculator-mask {
+  display: inline-block;
+  width: 325px;
+  height: 267px;
+  position: relative;
+  /* top: -272px; */
+  background-color: #9DD2EA;
+  border: solid;
+  border-color: #6D92A4;
+  border-width: 1px;
+}
+
+.btn {
+  box-shadow: 0px 0px 2px 0px #77A6BB;
+  width: 66px;
+  height: 40px;
+  display: inline-block;
+  position: absolute;
+  cursor: pointer;
+  background-color: #FFF0F5;
+  text-align: center;
+}
+/* Normal Button Styling*/
+  .btn p {
+    top: 11px;
+    position: relative;
+    display: inline;
+    color: #888888;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold; 
+  }
+
+  .btn:hover{
+    background: linear-gradient(#FFF0F5,  #FFF0F5, #E4EAEC);
+  }
+
+  .btn:active{
+    background: #E4EAEC;
+  }
+
+/* Clear Button Styling*/  
+  .btn.clear {
+    background-color: #FF9FA8;
+  }
+
+  .btn.clear p {
+    color: #FFF0F5;
+  }
+
+  .btn.clear:hover {
+    background:  linear-gradient(#FF9FA8,  #FF9FA8, #FB6F7C);
+  }
+
+  .btn.clear:active {
+    background: #FB6F7C;
+  }
+
+
+/*Equals Button Styling*/
+  .btn.equal {
+    background-color: #F1FF92;
+  }
+
+  .btn.equal:hover {
+    background: linear-gradient(#F1FF92,  #F1FF92, #EDED8E);
+  }
+
+  .btn.equal:active {
+    background: #EDED8E;
+  }
+
+
+
+.output {
+  position: absolute;
+  width: 212px;
+  height: 40px;
+  top: 21px;
+  left: 93px;
+  background-color: #7AA6BA;
+  }
+
+.total {
+  position: absolute;
+  right: 7px;
+  bottom: 3px;
+  font-size: 27px;
+  color: burlywood;
+}
+
+.clear {
+  left: 20px;
+  bottom: 206px;
+}
+
+.zero {
+  bottom: 18px;
+  left: 20px;
+  width: 139px;
+}
+
+.one {
+  bottom: 65px;
+  left: 20px;
+}
+
+.two {
+  bottom: 65px;
+  left: 93px;
+}
+
+.three {
+  bottom: 65px;
+  left: 166px;
+}
+
+.four {
+  bottom: 112px;
+  left: 20px;
+}
+
+.five {
+  bottom: 112px;
+  left: 93px;
+}
+
+.six {
+  bottom: 112px;
+  left: 166px;
+}
+
+.seven {
+  bottom: 159px;
+  left: 20px;
+}
+
+.eight {
+  bottom: 159px;
+  left: 93px;
+}
+
+.nine {
+  bottom: 159px;
+  left: 166px;
+}
+
+.decimal {
+  bottom: 18px;
+  left: 93px;
+}
+
+.equal {
+  bottom: 18px;
+  left: 166px;
+}
+
+.multiply {
+  bottom: 18px;
+  left: 239px;
+}
+
+.divide {
+  bottom: 65px;
+  left: 239px;
+}
+
+.subtract {
+  bottom: 112px;
+  left: 239px;
+}
+
+.add {
+  bottom: 159px;
+  left: 239px;
+}
+
+#header {
+  text-align: center;
+  color: #6ebfe0;
+  margin-bottom: 20%;
+}
+
+#header-input {
+  width: 325px;
+  height: 33px;
+  display: none;
+}
