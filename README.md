@@ -9,7 +9,7 @@ In this project we will use an npm package called `create-react-app` to quickly 
 ## Setup
 
 * `Fork` and `clone` this repository and then `cd` into it.
-* If you don't have `create-react-app` installed, do so by running `sudo npm install -g create-react-app`.
+* If you don't have `create-react-app` installed, do so by running `npm install -g create-react-app`.
 * Run `create-react-app app`in the root directory. ( This will create a folder called app )
 * Open the newly created `app` folder in your editor.
 * Make sure to move the calculator.png image into the app/src folder to avoid any errors!
@@ -349,15 +349,13 @@ In this step we'll make our calculator header editable by the user using state a
 Our header has two pieces : The visible text and an invisible input box.  We're going to wire up the header so that 
 when we click on it we can type in the invisible input box and the text part will update.
 
-VOCAB : class method = A class method is a method on a class.  It is a sibling to the constructor function.
-
 ### Instructions
 
 * Open `Calculator.js`. ( `src/components/Calculator/Calculator.js` )
 * Create a `constructor` method on the same level as the `render` method.
   * Inside the `contructor` method invoke the `super()` method.
   * After `super()`, create a state object that has a `header` property and give it a default value of `"Calculator"`.
-* Create a class method called `updateHeader` that takes `val` as a parameter.
+* Create a prototype method on the class called `updateHeader` that takes `val` as a parameter.
   * This method should set the `header` property on state to the value of `val`. ( hint: `this.setState({...})` )
 * Add an `onChange` event to the input element with an id of `#header-input` and make its value be an arrow function that receives a parameter `e`. This parameter represents the changeEvent object.
 * Inside the arrow function, call the `updateHeader` method and pass in the value from the event: `e.target.value`.
@@ -480,7 +478,7 @@ In this step we will create a method called `setDisplay()` that will allow us to
 
 * Open `Calculator.js`. ( `src/components/Calculator/Calculator.js` )
 * Change the value of the span with the class of `.total` to the value of the `display` property on state. ( hint: `{ this.state.abc }` )
-* Create a `setDisplay` class method that takes a parameter called `num`. This method should then use `num` to update the value of `display` on state. 
+* Create a `setDisplay` prototype method on the class that takes a parameter called `num`. This method should then use `num` to update the value of `display` on state. 
 * Update buttons zero through nine to call the `setDisplay` method with the correct number in <b>string</b> format. You can tell which button is which number by its `class`.
 
 ### Solution
