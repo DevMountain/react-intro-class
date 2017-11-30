@@ -567,9 +567,7 @@ In this step we will be tweaking our calculator to handle certain scenarios. If 
 * Assign the new variable `display` a value:
   * If `this.state.display` is `"0"` then `display` should equal `num` 
   * Otherwise `display` should equal `this.state.display` + `num`
-* Modify `this.setState` to update display:
-  * If `this.state.display` is less than 13 characters then update with the new `display` variable.
-  * Otherwise update with the current value of `this.state.display`.
+* If `this.state.display` is less than 13 characters, update the state's display value to `display`. Otherwise, don't update it.
 
 ### Solution
 
@@ -579,8 +577,10 @@ In this step we will be tweaking our calculator to handle certain scenarios. If 
 
 ```jsx
 setDisplay(num) {
-  var display = ( this.state.display === '0' ) ? num : this.state.display + num;
-  this.setState({ display: (this.state.display.length < 13) ? display : this.state.display })
+  if (this.state.display.length < 13) {
+    const display = this.state.display === '0' ? num : this.state.display + num
+    this.setState({ display: display })
+  }
 }
 ```
 
