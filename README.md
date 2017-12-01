@@ -211,7 +211,7 @@ In this step we will create our `Calculator` component that will render in our c
 
 * Create a folder called `components` inside of the `src` folder. (`app/src`)
 * Create a folder called `Calculator` inside of the `components` folder. ( `app/src/components` )
-* Create a file called `Caclulator.js` inside of the `Calculator` folder you just created.
+* Create a file called `Calculator.js` inside of the `Calculator` folder you just created.
 * Create a basic react component called `Calculator` in the `Calculator.js` file you just created.
 * Import the calculator image from the root directory. ( hint: `import varName from "picturepath.png"` )
   * Call your variable `calculatorImg`.
